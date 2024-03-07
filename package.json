@@ -2,8 +2,10 @@
   "name": "@mdrskn/aws-cdk-authenticated-cdn",
   "version": "0.1.0",
   "description": "CDK Construct Library to deploy Authenticated CDN using Amazon CloudFront and Amazon Cognito.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/gsy0911/aws-cdk-authenticated-cdn/issues"
   },
-  "homepage": "https://github.com/gsy0911/aws-cdk-authenticated-cdn#readme"
+  "homepage": "https://github.com/gsy0911/aws-cdk-authenticated-cdn#readme",
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
 }
