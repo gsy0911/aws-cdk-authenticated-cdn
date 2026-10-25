@@ -14,7 +14,7 @@
     "destroy": "npx projen destroy",
     "diff": "npx projen diff",
     "eject": "npx projen eject",
-    "eslint": "npx projen eslint",
+    "format": "npx projen format",
     "package": "npx projen package",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
@@ -32,15 +32,14 @@
     "organization": false
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.6.0",
+    "@types/aws-lambda": "^8.10.136",
+    "@types/cookie": "^0.6.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.12",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^6",
-    "@typescript-eslint/parser": "^6",
     "aws-cdk": "^2.131.0",
     "esbuild": "^0.20.1",
-    "eslint": "^8",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
     "jest": "^29.7.0",
     "jest-junit": "^15",
     "projen": "^0.80.9",
@@ -50,6 +49,8 @@
   },
   "dependencies": {
     "aws-cdk-lib": "^2.131.0",
+    "aws-jwt-verify": "^4.0.1",
+    "aws-sdk": "^2.1574.0",
     "constructs": "^10.0.5"
   },
   "keywords": [

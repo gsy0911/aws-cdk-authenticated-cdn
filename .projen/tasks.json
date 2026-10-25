@@ -114,13 +114,12 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
+    "format": {
+      "name": "format",
+      "description": "format by biome",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
-          "receiveArgs": true
+          "exec": "npx biome format --write ./src ./test"
         }
       ]
     },
@@ -188,9 +187,6 @@
         {
           "exec": "jest --passWithNoTests --updateSnapshot",
           "receiveArgs": true
-        },
-        {
-          "spawn": "eslint"
         }
       ]
     },
@@ -211,13 +207,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,esbuild,eslint-import-resolver-typescript,eslint-plugin-import,jest,projen,ts-jest,ts-node,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@biomejs/biome,@types/aws-lambda,@types/cookie,@types/fs-extra,@types/jest,esbuild,jest,projen,ts-jest,ts-node,typescript,aws-jwt-verify,aws-sdk"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-cdk esbuild eslint-import-resolver-typescript eslint-plugin-import eslint jest jest-junit projen ts-jest ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @biomejs/biome @types/aws-lambda @types/cookie @types/fs-extra @types/jest @types/node aws-cdk esbuild jest jest-junit projen ts-jest ts-node typescript aws-cdk-lib aws-jwt-verify aws-sdk constructs"
         },
         {
           "exec": "npx projen"
